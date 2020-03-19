@@ -35,7 +35,7 @@ async function main() {
         const network = await gateway.getNetwork('mychannel');
 
         // Get the contract from the network.
-        contract = network.getContract('tokenWallet');
+        contract = network.getContract('crowdFunding');
         module.exports.contract = contract;
 
     } catch (error) {
