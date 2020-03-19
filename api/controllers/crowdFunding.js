@@ -23,7 +23,7 @@ exports.createProfile = async (req, res) => {
 
 exports.queryProfile = async (req, res) => {
     if (!req.query.userID) {
-        return res.status(404).json({statusCode: 404, message: "Not found!"});
+        return res.status(404).json({statusCode: 404, message: "Provide userID!"});
     }
     let result = await fabric.contract.evaluateTransaction('queryProfile', req.query.userID);
     res.status(200).json({statusCode: 200, data: JSON.parse(result.toString())});
@@ -74,7 +74,7 @@ exports.createProject = async (req, res) => {
 
 exports.queryProject = async (req, res) => {
     if (!req.query.projectID) {
-        return res.status(404).json({statusCode: 404, message: "Not found!"});
+        return res.status(404).json({statusCode: 404, message: "Provide projectID!"});
     }
     let result = await fabric.contract.evaluateTransaction('queryProject', req.query.projectID);
     res.status(200).json({statusCode: 200, data: JSON.parse(result.toString())});
@@ -93,7 +93,7 @@ exports.createChat = async (req, res) => {
 
 exports.queryChat = async (req, res) => {
     if (!req.query.chatID) {
-        return res.status(404).json({statusCode: 404, message: "Not found!"});
+        return res.status(404).json({statusCode: 404, message: "Provide chatID!"});
     }
     let result = await fabric.contract.evaluateTransaction('queryChat', req.query.chatID);
     res.status(200).json({statusCode: 200, data: JSON.parse(result.toString())});
@@ -112,7 +112,7 @@ exports.createVote = async (req, res) => {
 
 exports.queryVotebyID = async (req, res) => {
     if (!req.query.voteID) {
-        return res.status(404).json({statusCode: 404, message: "Not found!"});
+        return res.status(404).json({statusCode: 404, message: "Provide voteID!"});
     }
     let result = await fabric.contract.evaluateTransaction('queryVotebyID', req.query.voteID);
     res.status(200).json({statusCode: 200, data: JSON.parse(result.toString())});
@@ -120,7 +120,7 @@ exports.queryVotebyID = async (req, res) => {
 
 exports.queryVotebyProject = async (req, res) => {
     if (!req.query.projectID) {
-        return res.status(404).json({statusCode: 404, message: "Not found!"});
+        return res.status(404).json({statusCode: 404, message: "Provide projectID!"});
     }
     let result = await fabric.contract.evaluateTransaction('queryVotebyProject', req.query.projectID);
     res.status(200).json({statusCode: 200, data: JSON.parse(result.toString())});
@@ -139,7 +139,7 @@ exports.createVoteDown = async (req, res) => {
 
 exports.queryVoteDownbyID = async (req, res) => {
     if (!req.query.voteDownID) {
-        return res.status(404).json({statusCode: 404, message: "Not found!"});
+        return res.status(404).json({statusCode: 404, message: "Provide voteDownID!"});
     }
     let result = await fabric.contract.evaluateTransaction('queryVoteDownbyID', req.query.voteDownID);
     res.status(200).json({statusCode: 200, data: JSON.parse(result.toString())});
@@ -147,7 +147,7 @@ exports.queryVoteDownbyID = async (req, res) => {
 
 exports.queryVoteDownbyProject = async (req, res) => {
     if (!req.query.projectID) {
-        return res.status(404).json({statusCode: 404, message: "Not found!"});
+        return res.status(404).json({statusCode: 404, message: "Provide projectID!"});
     }
     let result = await fabric.contract.evaluateTransaction('queryVoteDownbyProject', req.query.projectID);
     res.status(200).json({statusCode: 200, data: JSON.parse(result.toString())});
@@ -165,7 +165,7 @@ exports.createUpdate = async (req, res) => {
 
 exports.queryUpdatebyID = async (req, res) => {
     if (!req.query.updateID) {
-        return res.status(404).json({statusCode: 404, message: "Not found!"});
+        return res.status(404).json({statusCode: 404, message: "Provide updateID!"});
     }
     let result = await fabric.contract.evaluateTransaction('queryUpdatebyID', req.query.updateID);
     res.status(200).json({statusCode: 200, data: JSON.parse(result.toString())});
@@ -173,7 +173,7 @@ exports.queryUpdatebyID = async (req, res) => {
 
 exports.queryUpdatebyProject = async (req, res) => {
     if (!req.query.projectID) {
-        return res.status(404).json({statusCode: 404, message: "Not found!"});
+        return res.status(404).json({statusCode: 404, message: "Provide projectID!"});
     }
     let result = await fabric.contract.evaluateTransaction('queryUpdatebyProject', req.query.projectID);
     res.status(200).json({statusCode: 200, data: JSON.parse(result.toString())});
