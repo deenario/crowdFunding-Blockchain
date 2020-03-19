@@ -1,2 +1,2 @@
-/api/node_modules
-/blockchain/bin
+./api/node_modules
+./blockchain/bin/
