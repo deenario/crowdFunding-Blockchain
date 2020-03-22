@@ -11,7 +11,7 @@ router.get("/queryChat", CrowdFundingController.queryChat);
 router.post("/createVote", CrowdFundingController.createVote);
 router.get("/queryVotebyID", CrowdFundingController.queryVotebyID);
 router.get("/queryVotebyProject", CrowdFundingController.queryVotebyProject);
-router.get("/createVoteDown", CrowdFundingController.createVoteDown);
+router.post("/createVoteDown", CrowdFundingController.createVoteDown);
 router.get("/queryVoteDownbyID", CrowdFundingController.queryVoteDownbyID);
 router.get("/queryVoteDownbyProject", CrowdFundingController.queryVoteDownbyProject);
 router.post("/createUpdate", CrowdFundingController.createUpdate);
