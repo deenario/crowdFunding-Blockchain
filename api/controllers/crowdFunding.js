@@ -100,14 +100,13 @@ exports.queryChat = async (req, res) => {
 };
 
 exports.createVote = async (req, res) => {
-    console.log(req.body);
     let vote = {
         voteID: req.body.voteID ? req.body.voteID : " ",
         projectID: req.body.projectID ? req.body.projectID : " ",
         counter: req.body.counter ? req.body.counter : " ",
         voterID: req.body.voterID ? req.body.voterID : " "
     };
-    await fabric.contract.submitTransaction('createVote', vote.voterID, vote.projectID, vote.counter, vote.voterID);
+    await fabric.contract.submitTransaction('createVote', vote.voteID, vote.projectID, vote.counter, vote.voterID);
     res.status(200).json({statusCode: 200, message: "Successfully registered"});
 };
 
@@ -115,7 +114,6 @@ exports.queryVotebyID = async (req, res) => {
     if (!req.query.voteID) {
         return res.status(404).json({statusCode: 404, message: "Provide voteID!"});
     }
-    console.log(req.query);
     let result = await fabric.contract.evaluateTransaction('queryVotebyID', req.query.voteID);
     res.status(200).json({statusCode: 200, data: JSON.parse(result.toString())});
 };
@@ -124,7 +122,6 @@ exports.queryVotebyProject = async (req, res) => {
     if (!req.query.projectID) {
         return res.status(404).json({statusCode: 404, message: "Provide projectID!"});
     }
-    console.log(req.query);
     let result = await fabric.contract.evaluateTransaction('queryVotebyProject', req.query.projectID);
     res.status(200).json({statusCode: 200, data: JSON.parse(result.toString())});
 };
