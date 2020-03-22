@@ -155,9 +155,9 @@ exports.queryVoteDownbyProject = async (req, res) => {
 
 exports.createUpdate = async (req, res) => {
     let update = {
-        updateID: req.body.voteDownID ? req.body.voteDownID : " ",
-        projectID: req.body.voteDownID ? req.body.voteDownID : " ",
-        updateContent: req.body.voteDownID ? req.body.voteDownID : " "
+        updateID: req.body.updateID ? req.body.updateID : " ",
+        projectID: req.body.projectID ? req.body.projectID : " ",
+        updateContent: req.body.updateContent ? req.body.updateContent : " "
     };
     await fabric.contract.submitTransaction('createUpdate', update.updateID, update.projectID, update.updateContent);
     res.status(200).json({statusCode: 200, message: "Successfully registered"});
